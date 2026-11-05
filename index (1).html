@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Riverside Management · Bridge House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#3d4a2a;--green2:#5b6b3a;--brown:#5a3d27;--brown2:#8a6a47;--parch:#efe5c9;--paper:#f8f2e0;--ink:#2e2417;--ok:#4f7a2c;--bad:#a23b2a;--amber:#b7791f;--line:#cdbd96;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--parch);color:var(--ink);font:16px/1.5 Lora,Georgia,serif;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;margin:0;font-weight:700}
+a{color:var(--brown)}
+header{background:var(--green);color:var(--paper);padding:14px 16px;border-bottom:4px solid var(--brown);display:flex;align-items:center;gap:12px}
+header h1{font-size:1.6rem;line-height:1.1}
+header p{margin:0;font-size:.82rem;opacity:.8;font-style:italic}
+#back{background:var(--green2);color:var(--paper);border:0;border-radius:6px;padding:8px 12px;font:600 .9rem Lora,serif;cursor:pointer}
+main{max-width:900px;margin:0 auto;padding:16px}
+.crumb{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;color:var(--brown);margin:0 0 12px;font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--paper);border:2px solid var(--brown2);border-radius:10px;padding:20px 10px;text-align:center;cursor:pointer;font:inherit;color:var(--brown);box-shadow:0 2px 0 var(--line)}
+.tile .ic{font-size:2.2rem;display:block}
+.tile h3{font-size:1.4rem}
+.tile small{display:block;color:var(--brown2);font-size:.8rem}
+.tile small b{color:var(--bad)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:16px;box-shadow:0 1px 0 var(--line)}
+.card h2{color:var(--brown);font-size:1.5rem;margin-bottom:8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button.b,label.b{background:var(--green);color:var(--paper);border:0;border-radius:6px;padding:8px 14px;font:600 .9rem Lora,Georgia,serif;cursor:pointer;display:inline-block}
+button.b.alt,label.b.alt{background:var(--brown)}
+button.b.ghost{background:transparent;color:var(--brown);border:1px solid var(--brown2)}
+input,select,textarea{font:inherit;width:100%;padding:8px;border:1px solid var(--brown2);border-radius:6px;background:#fffdf5;color:var(--ink)}
+textarea{min-height:70px}
+.f{margin-bottom:10px}.f.g{flex:1 1 140px}.f>span{display:block;font-size:.8rem;color:var(--brown);font-weight:600;margin-bottom:2px}
+.plan{position:relative;width:100%;aspect-ratio:4/3;border:2px solid var(--brown);border-radius:6px;background:#e9deb9 repeating-linear-gradient(0deg,transparent 0 39px,rgba(90,61,39,.15) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(90,61,39,.15) 39px 40px);overflow:hidden;margin:10px 0}
+.plan.has{background:#e9deb9 center/contain no-repeat}
+.plan.placing{cursor:crosshair;outline:3px dashed var(--bad)}
+.plan .hint{position:absolute;inset:auto 8px 8px 8px;text-align:center;font-size:.8rem;color:var(--brown);background:rgba(248,242,224,.88);border-radius:4px;padding:2px}
+.pin{position:absolute;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:2px solid #fff;color:#fff;font:700 .8rem Lora,serif;cursor:pointer;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.5)}
+.pin.water{border-radius:7px}
+.pin.ok{background:var(--ok)}.pin.bad{background:var(--bad)}
+.legend{font-size:.8rem;color:var(--brown2)}
+.item{display:flex;gap:10px;border-top:1px solid var(--line);padding:10px 0}
+.item:first-of-type{border-top:0}
+.num{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;text-align:center;line-height:28px;font-weight:700;font-size:.85rem}
+.num.water{border-radius:7px}
+.num.ok{background:var(--ok)}.num.bad{background:var(--bad)}
+.grow{flex:1;min-width:0}
+small,.meta{color:var(--brown2)}.meta{font-size:.82rem}
+.tag{display:inline-block;background:var(--green2);color:var(--paper);border-radius:12px;padding:1px 9px;font-size:.72rem;margin:3px 3px 0 0}
+.tag.warn{background:var(--bad)}
+.log{border-left:3px solid var(--brown2);padding:4px 0 4px 10px;margin:10px 0}
+.log time{font-size:.78rem;color:var(--brown2)}
+.log p{margin:2px 0;white-space:pre-wrap;font-size:.92rem}
+.st{font-size:.7rem;border-radius:10px;padding:1px 8px;color:#fff;background:var(--green2);vertical-align:middle}
+.st.todo{background:var(--bad)}.st.prog{background:var(--amber)}
+.x{background:none;border:0;color:var(--bad);cursor:pointer;font-size:.8rem;padding:0}
+.stats{display:flex;flex-wrap:wrap;gap:14px;font-size:.9rem;margin-bottom:6px}
+.empty{text-align:center;color:var(--brown2);font-style:italic;padding:30px 10px}
+footer{max-width:900px;margin:0 auto;padding:10px 16px 30px;font-size:.78rem;color:var(--brown2);text-align:center}
+dialog{border:2px solid var(--brown);border-radius:8px;background:var(--paper);color:var(--ink);max-width:480px;width:calc(100% - 24px);padding:16px;max-height:92vh}
+dialog::backdrop{background:rgba(46,36,23,.6)}
+.chk{display:inline-flex;align-items:center;gap:4px;margin:0 10px 6px 0;font-size:.9rem}.chk input{width:auto}
+#gate{position:fixed;inset:0;z-index:9;background:var(--green);display:flex;align-items:center;justify-content:center;padding:20px}
+#gate .box{background:var(--paper);border:3px double var(--brown);border-radius:8px;padding:26px 22px;max-width:360px;width:100%;text-align:center}
+#gate h1{color:var(--brown);font-size:2rem}
+#gate p{font-size:.85rem;color:var(--brown2);font-style:italic}
+#gate .small{font-size:.72rem;font-style:normal;margin-top:14px}
+.shake{animation:sh .3s}@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+</style>
+</head>
+<body>
+<div id="gate"><form class="box" id="gf">
+<h1>Riverside Management</h1><p>Bridge House · Grade II listed · Lincolnshire</p>
+<div class="f"><input id="pw" type="password" inputmode="numeric" autocomplete="off" placeholder="Enter password" aria-label="Password"></div>
+<button class="b" style="width:100%">Enter</button>
+<p class="small">Unofficial private record. Not affiliated with Riverside Management, the management company that owns Bridge House.</p>
+</form></div>
+
+<header><button id="back" hidden>← Back</button><div><h1>Riverside Management</h1><p>Bridge House · Grade II listed · Lincolnshire</p></div></header>
+<main id="main"></main>
+<footer>
+<div class="row" style="justify-content:center;margin-bottom:8px"><button class="b ghost" id="exp">Export backup</button></div>
+Unofficial private record for Bridge House. Not affiliated with Riverside Management. Data is saved to a shared database, so it matches on every device.
+</footer>
+<dialog id="dlg"></dialog>
+
+<script>
+const PW_STORE='bh-ok';
+const OPT_PRI=['Low','Medium','High'];
+const SEC={
+ electrical:{t:'Electrical',ic:'⚡',items:true,types:['Outside light','Solar panel','Fence/gate light','Other'],tags:['Mains supply','Light switch','Requires attention','Motion sensor','Broken'],warn:['Requires attention','Broken'],
+  f:[['power','Power source','sel',['Mains','Solar','Battery','Other']],['model','Make / model'],['installed','Installed','date'],['checked','Last checked','date'],['contractor','Contractor / supplier'],['priority','Priority','sel',OPT_PRI]]},
+ water:{t:'Water',ic:'💧',items:true,types:['Outside tap','Water collector','Other'],tags:['Requires attention','Leaking','Frost protected','Isolation valve'],warn:['Requires attention','Leaking'],
+  f:[['supply','Supply','sel',['Mains','Rainwater','Other']],['model','Make / model'],['installed','Installed','date'],['checked','Last checked','date'],['contractor','Contractor / supplier'],['priority','Priority','sel',OPT_PRI]]},
+ gas:{t:'Gas',ic:'🔥',empty:true},
+ gardening:{t:'Gardening',ic:'🌿',par:1},
+ fences:{t:'Fences & Gates',ic:'🚪',par:1},
+ meters:{t:'Meter Cupboards',ic:'📦',par:1}
+};
+const MAINT=['gardening','fences','meters'];
+const STAT=[['done','Done'],['prog','In progress'],['todo','To do']];
+let S={master:null},PW=sessionStorage.getItem(PW_STORE)||'',placing=null,filt='all',layers={electrical:true,water:true};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const today=()=>new Date().toISOString().slice(0,10);
+const fmt=d=>new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+const D=k=>S[k]||(S[k]={items:[],log:[]});
+const unlock=()=>$('#gate').style.display='none';
+
+/* api */
+async function api(action,body={}){
+ const r=await fetch('/api/data',{method:'POST',headers:{'Content-Type':'application/json','x-pass':PW},body:JSON.stringify({action,...body})});
+ if(r.status===401)throw new Error('auth');if(!r.ok)throw new Error('server');return r.json()}
+async function boot(){try{S=await api('load');unlock();render()}catch(e){sessionStorage.removeItem(PW_STORE);if(e.message!=='auth')alert('Could not reach the server.')}}
+const sync=(a,b)=>api(a,b).catch(()=>{alert('Could not save. Reloading the latest data.');boot()});
+$('#gf').onsubmit=async e=>{e.preventDefault();PW=$('#pw').value;
+ try{S=await api('load');sessionStorage.setItem(PW_STORE,PW);unlock();render()}
+ catch(x){const b=$('#gf');b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');$('#pw').value='';if(x.message!=='auth')alert('Could not reach the server.')}};
+
+/* routing */
+const route=()=>location.hash.slice(1)||'home';
+addEventListener('hashchange',()=>{placing=null;render();scrollTo(0,0)});
+$('#back').onclick=()=>{const s=SEC[route()];location.hash=s&&s.par?'maintenance':'home'};
+
+function tile(k,ic,t,sub){return `<button class="tile" data-go="${k}"><span class="ic">${ic}</span><h3>${t}</h3><small>${sub}</small></button>`}
+const badN=k=>D(k).items.filter(i=>i.status==='bad').length;
+const itemSub=k=>{const n=D(k).items.length,b=badN(k);return `${n} item${n===1?'':'s'}${b?` · <b>${b} not working</b>`:''}`};
+const logN=k=>{const n=D(k).log.length;return `${n} entr${n===1?'y':'ies'}`};
+
+function render(){
+ const v=route(),s=SEC[v];let h='';
+ $('#back').hidden=v==='home';
+ if(v==='home'){
+  h=`<p class="crumb">What are you accessing?</p><div class="tiles">
+  ${tile('electrical','⚡','Electrical',itemSub('electrical'))}${tile('water','💧','Water',itemSub('water'))}
+  ${tile('gas','🔥','Gas','Coming soon')}${tile('maintenance','🛠️','Maintenance','Gardening, fences, meters')}
+  ${tile('plan','🗺️','Master Plan',S.master?'Site plan uploaded':'Upload your site plan')}</div>`;
+ }else if(v==='maintenance'){
+  h=`<p class="crumb">Maintenance</p><div class="tiles">${MAINT.map(k=>tile(k,SEC[k].ic,SEC[k].t,logN(k))).join('')}</div>`;
+ }else if(v==='plan'){
+  h=`<p class="crumb">Master Plan</p><div class="card"><div class="row">
+  <label class="b alt">${S.master?'Replace plan':'Upload plan'}<input type="file" id="planf" accept="image/*" hidden></label>
+  ${S.master?'<button class="b ghost" id="rmplan">Remove plan</button>':''}</div>
+  <p class="meta">One plan is shared by every section. To add a pin, open Electrical or Water and tap “Place on plan” on an item.</p>
+  <div class="row">${['electrical','water'].map(k=>`<label class="chk"><input type="checkbox" data-layer="${k}" ${layers[k]?'checked':''}>${SEC[k].ic} ${SEC[k].t}</label>`).join('')}</div>
+  ${planHTML(['electrical','water'].filter(k=>layers[k]))}
+  <div class="legend">Circle = electrical · Square = water · Green = working · Red = not working</div></div>`;
+ }else if(s&&s.empty){
+  h=`<p class="crumb">${s.t}</p><div class="card"><div class="empty">Nothing here yet. This section is saved for later.</div></div>`;
+ }else if(s){
+  h=`<p class="crumb">${s.par?'Maintenance: ':''}${s.t}</p>`+(s.items?itemsCard(v):'')+logCard(v);
+ }
+ $('#main').innerHTML=h;
+}
+
+function planHTML(secs){
+ if(!S.master)return `<div class="plan"><div class="hint">No master plan yet. <a href="#plan">Upload one</a></div></div>`;
+ const pins=secs.flatMap(k=>D(k).items.map((i,n)=>i.x==null?'':`<button class="pin ${k} ${i.status==='bad'?'bad':'ok'}" data-sec="${k}" data-id="${i.id}" style="left:${i.x}%;top:${i.y}%" title="${esc(i.name)}">${n+1}</button>`)).join('');
+ return `<div class="plan has ${placing?'placing':''}" id="plan" style="background-image:url(${S.master})">${pins}<div class="hint">${placing?'Tap the plan where this item is':'Tap a pin to edit it'}</div></div>`;
+}
+
+function itemsCard(v){
+ const s=SEC[v],d=D(v),bad=badN(v),att=d.items.filter(i=>(i.tags||[]).some(t=>s.warn.includes(t))).length;
+ const list=d.items.map((i,n)=>[i,n]).filter(([i])=>filt==='all'||(filt==='bad'&&i.status==='bad')||(filt==='att'&&(i.tags||[]).some(t=>s.warn.includes(t))));
+ return `<div class="card"><h2>Location on plan</h2>${planHTML([v])}
+ <div class="row"><a href="#plan">Manage master plan</a></div></div>
+ <div class="card"><h2>${s.t} items</h2>
+ <div class="stats"><span>🟢 ${d.items.length-bad} working</span><span>🔴 ${bad} not working</span><span>⚠️ ${att} need attention</span></div>
+ <div class="row" style="margin-bottom:6px"><button class="b" data-add="${v}">+ Add item</button>
+ <select id="filt" style="width:auto"><option value="all">All items</option><option value="bad" ${filt==='bad'?'selected':''}>Not working</option><option value="att" ${filt==='att'?'selected':''}>Needs attention</option></select></div>
+ ${list.length?list.map(([i,n])=>{const dd=i.d||{};
+  const det=s.f.filter(f=>dd[f[0]]).map(f=>`${f[1]}: ${f[2]==='date'?fmt(dd[f[0]]):esc(dd[f[0]])}`).join(' · ');
+  return `<div class="item"><div class="num ${v==='water'?'water':''} ${i.status==='bad'?'bad':'ok'}">${n+1}</div><div class="grow">
+  <strong>${esc(i.name)}</strong> <small>· ${esc(i.type)}${i.loc?' · '+esc(i.loc):''}</small><br>
+  <small>${i.status==='bad'?'Not working':'Working'}${i.x==null?' · not on plan':''}</small>
+  <div>${(i.tags||[]).map(t=>`<span class="tag ${s.warn.includes(t)?'warn':''}">${esc(t)}</span>`).join('')}</div>
+  ${det?`<div class="meta">${det}</div>`:''}${i.notes?`<div style="font-size:.88rem;margin-top:3px">${esc(i.notes)}</div>`:''}
+  <div class="row" style="margin-top:6px"><button class="b ghost" data-edit="${i.id}" data-sec="${v}">Edit</button><button class="b ghost" data-place="${i.id}" data-sec="${v}">${i.x==null?'Place on plan':'Move on plan'}</button></div></div></div>`}).join(''):'<div class="empty">No items to show.</div>'}</div>`;
+}
+
+function logCard(v){
+ const s=SEC[v],d=D(v);
+ return `<div class="card"><h2>${s.items?'Work log':'Log'}</h2><form id="lf" data-sec="${v}">
+ <div class="row"><div class="f g"><span>Date</span><input type="date" id="ld" value="${today()}" required></div>
+ <div class="f g"><span>Status</span><select id="ls">${STAT.map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('')}</select></div></div>
+ <div class="f"><span>Title</span><input id="lti" required placeholder="${s.items?'e.g. Replaced porch bulb':'e.g. Cut back hedge'}"></div>
+ ${s.items&&d.items.length?`<div class="f"><span>Item (optional)</span><select id="li"><option value="">General</option>${d.items.map((i,n)=>`<option value="${i.id}">${n+1}. ${esc(i.name)}</option>`).join('')}</select></div>`:''}
+ <div class="row"><div class="f g"><span>Done by</span><input id="lb" placeholder="Name or company"></div><div class="f g"><span>Cost (£)</span><input id="lc" type="number" step="0.01" min="0"></div></div>
+ <div class="f"><span>Details</span><textarea id="lt" placeholder="What was done, what’s next…"></textarea></div>
+ <button class="b">Add to log</button></form>
+ ${d.log.length?[...d.log].sort((a,b)=>b.date.localeCompare(a.date)).map(l=>{const x=l.d||{},it=d.items.find(i=>i.id===l.item),st=STAT.find(y=>y[0]===x.status);
+  return `<div class="log"><time>${fmt(l.date)}${it?' · '+esc(it.name):''}</time>
+  <div><strong>${esc(x.title||'Entry')}</strong> ${st?`<span class="st ${st[0]}">${st[1]}</span>`:''}</div>
+  ${x.by||x.cost?`<div class="meta">${x.by?'By '+esc(x.by):''}${x.by&&x.cost?' · ':''}${x.cost?'£'+Number(x.cost).toFixed(2):''}</div>`:''}
+  ${l.text?`<p>${esc(l.text)}</p>`:''}<button class="x" data-dl="${l.id}" data-sec="${v}">Delete</button></div>`}).join(''):'<div class="empty">No entries yet.</div>'}</div>`;
+}
+
+/* events */
+$('#main').addEventListener('click',e=>{
+ const t=e.target,ds=t.dataset;
+ if(ds.go)return location.hash=ds.go;
+ if(ds.add)return openItem(ds.add);
+ if(ds.edit)return openItem(ds.sec,ds.edit);
+ if(ds.place){
+  if(!S.master){alert('Upload a master plan first.');return location.hash='plan'}
+  placing={sec:ds.sec,id:ds.place};render();return $('#plan').scrollIntoView({behavior:'smooth',block:'center'})}
+ if(t.id==='rmplan'){if(confirm('Remove the master plan? Pins are kept.')){S.master=null;sync('removePlan',{section:'master'});render()}return}
+ if(ds.dl){if(confirm('Delete this entry?')){const d=D(ds.sec);d.log=d.log.filter(l=>l.id!==ds.dl);sync('deleteLog',{id:ds.dl});render()}return}
+ if(t.classList.contains('pin')&&!placing)return openItem(ds.sec,ds.id);
+ const p=t.closest('#plan');
+ if(p&&placing){const r=p.getBoundingClientRect(),it=D(placing.sec).items.find(i=>i.id===placing.id);
+  it.x=+((e.clientX-r.left)/r.width*100).toFixed(1);it.y=+((e.clientY-r.top)/r.height*100).toFixed(1);
+  const sec=placing.sec;placing=null;sync('upsertItem',{section:sec,item:it});render()}
+});
+$('#main').addEventListener('submit',e=>{
+ if(e.target.id!=='lf')return;e.preventDefault();const v=e.target.dataset.sec;
+ const en={id:uid(),date:$('#ld').value,item:$('#li')?.value||'',text:$('#lt').value.trim(),
+  d:{title:$('#lti').value.trim(),status:$('#ls').value,by:$('#lb').value.trim(),cost:$('#lc').value}};
+ D(v).log.push(en);sync('addLog',{section:v,entry:en});render();
+});
+$('#main').addEventListener('change',e=>{
+ const t=e.target;
+ if(t.id==='filt'){filt=t.value;return render()}
+ if(t.dataset.layer){layers[t.dataset.layer]=t.checked;return render()}
+ if(t.id!=='planf'||!t.files[0])return;
+ const img=new Image(),u=URL.createObjectURL(t.files[0]);
+ img.onload=()=>{const m=1600,sc=Math.min(1,m/Math.max(img.width,img.height)),c=document.createElement('canvas');
+  c.width=img.width*sc;c.height=img.height*sc;c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+  S.master=c.toDataURL('image/jpeg',.8);URL.revokeObjectURL(u);sync('setPlan',{section:'master',image:S.master});render()};
+ img.src=u;
+});
+
+/* item dialog */
+function fld([k,l,t,o],val){const v=esc(val||'');
+ return `<div class="f g"><span>${l}</span>${t==='sel'?`<select data-d="${k}"><option value="">–</option>${o.map(x=>`<option ${x===val?'selected':''}>${x}</option>`).join('')}</select>`:`<input data-d="${k}" type="${t==='date'?'date':'text'}" value="${v}">`}</div>`}
+function openItem(sec,id){
+ const s=SEC[sec],d=D(sec),i=d.items.find(x=>x.id===id)||{name:'',type:s.types[0],loc:'',status:'ok',tags:[],notes:'',d:{}},dd=i.d||{},dl=$('#dlg');
+ dl.innerHTML=`<form id="if"><h2 style="color:var(--brown)">${id?'Edit':'Add'} ${s.t.toLowerCase()} item</h2>
+ <div class="f"><span>Name</span><input id="in" required value="${esc(i.name)}" placeholder="e.g. Front porch light"></div>
+ <div class="row"><div class="f g"><span>Type</span><select id="it">${s.types.map(t=>`<option ${t===i.type?'selected':''}>${esc(t)}</option>`).join('')}</select></div>
+ <div class="f g"><span>Status</span><select id="is"><option value="ok" ${i.status!=='bad'?'selected':''}>Working</option><option value="bad" ${i.status==='bad'?'selected':''}>Not working</option></select></div></div>
+ <div class="f"><span>Location</span><input id="il" value="${esc(i.loc)}" placeholder="e.g. By the side gate"></div>
+ <div class="f"><span>Tags</span>${s.tags.map(t=>`<label class="chk"><input type="checkbox" value="${esc(t)}" ${(i.tags||[]).includes(t)?'checked':''}>${esc(t)}</label>`).join('')}</div>
+ <div class="row">${s.f.map(f=>fld(f,dd[f[0]])).join('')}</div>
+ <div class="f"><span>Notes</span><textarea id="inn">${esc(i.notes)}</textarea></div>
+ <div class="row"><button class="b">Save</button><button type="button" class="b ghost" id="cx">Cancel</button>${id?'<button type="button" class="b alt" id="del" style="margin-left:auto">Delete</button>':''}</div></form>`;
+ dl.showModal();
+ $('#cx').onclick=()=>dl.close();
+ if(id)$('#del').onclick=()=>{if(confirm('Delete this item?')){d.items=d.items.filter(x=>x.id!==id);sync('deleteItem',{id});dl.close();render()}};
+ $('#if').onsubmit=e=>{e.preventDefault();
+  const o=id?i:{id:uid(),x:null,y:null},det={};
+  dl.querySelectorAll('[data-d]').forEach(c=>{if(c.value)det[c.dataset.d]=c.value});
+  Object.assign(o,{name:$('#in').value.trim(),type:$('#it').value,loc:$('#il').value.trim(),status:$('#is').value,notes:$('#inn').value.trim(),d:det,
+   tags:[...dl.querySelectorAll('.chk input:checked')].map(c=>c.value)});
+  if(!id)d.items.push(o);sync('upsertItem',{section:sec,item:o});dl.close();render()};
+}
+
+/* backup */
+$('#exp').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'}));a.download='bridge-house-backup-'+today()+'.json';a.click()};
+
+render();
+if(PW)boot();
+</script>
+</body>
+</html>
