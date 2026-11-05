@@ -6,69 +6,71 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Riverside Management · Bridge House</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <style>
-:root{--green:#3d4a2a;--green2:#5b6b3a;--brown:#5a3d27;--brown2:#8a6a47;--parch:#efe5c9;--paper:#f8f2e0;--ink:#2e2417;--ok:#4f7a2c;--bad:#a23b2a;--amber:#b7791f;--line:#cdbd96;color-scheme:light}
+:root{--green:#2f3b22;--green2:#4a5a32;--brown:#4a3222;--brown2:#7a5c3e;--parch:#e6d9b3;--paper:#f3ead0;--ink:#2a2016;--ok:#4a5d2a;--bad:#7c2a1e;--amber:#8a6420;--gold:#a8864a;--line:#b9a574;color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--parch);color:var(--ink);font:16px/1.5 Lora,Georgia,serif;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;margin:0;font-weight:700}
+body{margin:0;color:var(--ink);font:17px/1.55 'IM Fell English',Georgia,serif;background:var(--parch) radial-gradient(ellipse at 15% 5%,rgba(255,250,225,.7),transparent 55%),radial-gradient(ellipse at 95% 95%,rgba(120,85,40,.22),transparent 50%);background-attachment:fixed;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+h1,h2,h3,.crumb,button,.st,.tag{font-family:'IM Fell English SC',Georgia,serif;font-weight:400;letter-spacing:.04em}
 a{color:var(--brown)}
-header{background:var(--green);color:var(--paper);padding:14px 16px;border-bottom:4px solid var(--brown);display:flex;align-items:center;gap:12px}
-header h1{font-size:1.6rem;line-height:1.1}
-header p{margin:0;font-size:.82rem;opacity:.8;font-style:italic}
-#back{background:var(--green2);color:var(--paper);border:0;border-radius:6px;padding:8px 12px;font:600 .9rem Lora,serif;cursor:pointer}
-main{max-width:900px;margin:0 auto;padding:16px}
-.crumb{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;color:var(--brown);margin:0 0 12px;font-weight:700}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.tile{background:var(--paper);border:2px solid var(--brown2);border-radius:10px;padding:20px 10px;text-align:center;cursor:pointer;font:inherit;color:var(--brown);box-shadow:0 2px 0 var(--line)}
-.tile .ic{font-size:2.2rem;display:block}
-.tile h3{font-size:1.4rem}
-.tile small{display:block;color:var(--brown2);font-size:.8rem}
-.tile small b{color:var(--bad)}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:16px;box-shadow:0 1px 0 var(--line)}
-.card h2{color:var(--brown);font-size:1.5rem;margin-bottom:8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+header{background:var(--green);color:#eadfbd;padding:14px 16px;border-bottom:6px double var(--gold);display:flex;align-items:center;gap:14px}
+header h1{font-size:1.7rem;line-height:1.1}
+header p{margin:2px 0 0;font-size:.85rem;opacity:.85;font-style:italic}
+#back{background:transparent;color:#eadfbd;border:1px solid var(--gold);border-radius:2px;padding:7px 12px;cursor:pointer;font-size:.95rem}
+main{max-width:920px;margin:0 auto;padding:18px 16px}
+.crumb{font-size:1.9rem;color:var(--brown);margin:0 0 14px;text-align:center;border-bottom:1px solid var(--gold);padding-bottom:6px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:18px}
+.tile{background:var(--paper);border:1px solid var(--brown2);outline:1px solid var(--line);outline-offset:-6px;border-radius:2px;padding:20px 10px;text-align:center;cursor:pointer;color:var(--brown);box-shadow:0 2px 5px rgba(60,40,20,.28)}
+.tile:hover{background:#f8f1da}
+.tile .ic{display:block;font:1.7rem 'IM Fell English SC',serif;color:var(--gold);border-bottom:1px solid var(--line);margin:0 22px 8px}
+.tile h3{font-size:1.3rem}
+.tile small{display:block;font-size:.85rem;font-style:italic}
+.tile small b{color:var(--bad);font-style:normal}
+.card{background:var(--paper);border:1px solid var(--brown2);outline:1px solid var(--line);outline-offset:-5px;border-radius:2px;padding:20px 18px;margin-bottom:18px;box-shadow:0 2px 6px rgba(60,40,20,.25)}
+.card h2{color:var(--brown);font-size:1.45rem;margin-bottom:10px;border-bottom:1px solid var(--gold);padding-bottom:4px;text-align:center}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-button.b,label.b{background:var(--green);color:var(--paper);border:0;border-radius:6px;padding:8px 14px;font:600 .9rem Lora,Georgia,serif;cursor:pointer;display:inline-block}
-button.b.alt,label.b.alt{background:var(--brown)}
+button.b,label.b{background:var(--green);color:#eadfbd;border:1px solid #1d2615;border-radius:2px;padding:7px 14px;font-size:.95rem;cursor:pointer;display:inline-block}
+button.b.alt,label.b.alt{background:var(--brown);border-color:#2e1e12}
 button.b.ghost{background:transparent;color:var(--brown);border:1px solid var(--brown2)}
-input,select,textarea{font:inherit;width:100%;padding:8px;border:1px solid var(--brown2);border-radius:6px;background:#fffdf5;color:var(--ink)}
+input,select,textarea{font:inherit;width:100%;padding:7px 8px;border:1px solid var(--brown2);border-radius:2px;background:#f9f3df;color:var(--ink);box-shadow:inset 0 1px 3px rgba(60,40,20,.2)}
 textarea{min-height:70px}
-.f{margin-bottom:10px}.f.g{flex:1 1 140px}.f>span{display:block;font-size:.8rem;color:var(--brown);font-weight:600;margin-bottom:2px}
-.plan{position:relative;width:100%;aspect-ratio:4/3;border:2px solid var(--brown);border-radius:6px;background:#e9deb9 repeating-linear-gradient(0deg,transparent 0 39px,rgba(90,61,39,.15) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(90,61,39,.15) 39px 40px);overflow:hidden;margin:10px 0}
-.plan.has{background:#e9deb9 center/contain no-repeat}
+.f{margin-bottom:10px}.f.g{flex:1 1 140px}.f>span{display:block;font:.85rem 'IM Fell English SC',serif;letter-spacing:.05em;color:var(--brown);margin-bottom:2px}
+.plan{position:relative;width:100%;aspect-ratio:4/3;border:3px double var(--brown);background:#ddd0a6 repeating-linear-gradient(0deg,transparent 0 39px,rgba(90,61,39,.15) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(90,61,39,.15) 39px 40px);overflow:hidden;margin:10px 0}
+.plan.has{background:#ddd0a6 center/contain no-repeat}
 .plan.placing{cursor:crosshair;outline:3px dashed var(--bad)}
-.plan .hint{position:absolute;inset:auto 8px 8px 8px;text-align:center;font-size:.8rem;color:var(--brown);background:rgba(248,242,224,.88);border-radius:4px;padding:2px}
-.pin{position:absolute;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:2px solid #fff;color:#fff;font:700 .8rem Lora,serif;cursor:pointer;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.5)}
-.pin.water{border-radius:7px}
+.plan .hint{position:absolute;inset:auto 8px 8px 8px;text-align:center;font-size:.85rem;color:var(--brown);background:rgba(243,234,208,.9);padding:2px}
+.pin{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:2px solid #f3ead0;color:#f3ead0;font:.85rem 'IM Fell English',serif;cursor:pointer;padding:0;box-shadow:0 1px 3px rgba(0,0,0,.6)}
+.pin.water{border-radius:3px}.pin.gas{border-radius:50% 50% 3px 3px}
 .pin.ok{background:var(--ok)}.pin.bad{background:var(--bad)}
-.legend{font-size:.8rem;color:var(--brown2)}
-.item{display:flex;gap:10px;border-top:1px solid var(--line);padding:10px 0}
+.legend,.meta{font-size:.85rem;color:var(--brown2)}
+.item{display:flex;gap:10px;border-top:1px dotted var(--brown2);padding:10px 0}
 .item:first-of-type{border-top:0}
-.num{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;text-align:center;line-height:28px;font-weight:700;font-size:.85rem}
-.num.water{border-radius:7px}
+.num{flex:none;width:26px;height:26px;border-radius:50%;color:#f3ead0;text-align:center;line-height:26px;font-size:.85rem}
+.num.water{border-radius:3px}.num.gas{border-radius:50% 50% 3px 3px}
 .num.ok{background:var(--ok)}.num.bad{background:var(--bad)}
 .grow{flex:1;min-width:0}
-small,.meta{color:var(--brown2)}.meta{font-size:.82rem}
-.tag{display:inline-block;background:var(--green2);color:var(--paper);border-radius:12px;padding:1px 9px;font-size:.72rem;margin:3px 3px 0 0}
+small{color:var(--brown2)}
+.tag{display:inline-block;background:var(--green2);color:#eadfbd;border-radius:2px;padding:0 8px;font-size:.75rem;margin:3px 3px 0 0}
 .tag.warn{background:var(--bad)}
-.log{border-left:3px solid var(--brown2);padding:4px 0 4px 10px;margin:10px 0}
-.log time{font-size:.78rem;color:var(--brown2)}
-.log p{margin:2px 0;white-space:pre-wrap;font-size:.92rem}
-.st{font-size:.7rem;border-radius:10px;padding:1px 8px;color:#fff;background:var(--green2);vertical-align:middle}
+.log{border-left:2px solid var(--gold);padding:3px 0 3px 12px;margin:12px 0}
+.log time{font-size:.82rem;color:var(--brown2);font-style:italic}
+.log p{margin:2px 0;white-space:pre-wrap;font-size:.95rem}
+.st{font-size:.72rem;border-radius:2px;padding:0 7px;color:#f3ead0;background:var(--ok)}
 .st.todo{background:var(--bad)}.st.prog{background:var(--amber)}
-.x{background:none;border:0;color:var(--bad);cursor:pointer;font-size:.8rem;padding:0}
-.stats{display:flex;flex-wrap:wrap;gap:14px;font-size:.9rem;margin-bottom:6px}
-.empty{text-align:center;color:var(--brown2);font-style:italic;padding:30px 10px}
-footer{max-width:900px;margin:0 auto;padding:10px 16px 30px;font-size:.78rem;color:var(--brown2);text-align:center}
-dialog{border:2px solid var(--brown);border-radius:8px;background:var(--paper);color:var(--ink);max-width:480px;width:calc(100% - 24px);padding:16px;max-height:92vh}
-dialog::backdrop{background:rgba(46,36,23,.6)}
-.chk{display:inline-flex;align-items:center;gap:4px;margin:0 10px 6px 0;font-size:.9rem}.chk input{width:auto}
-#gate{position:fixed;inset:0;z-index:9;background:var(--green);display:flex;align-items:center;justify-content:center;padding:20px}
-#gate .box{background:var(--paper);border:3px double var(--brown);border-radius:8px;padding:26px 22px;max-width:360px;width:100%;text-align:center}
-#gate h1{color:var(--brown);font-size:2rem}
-#gate p{font-size:.85rem;color:var(--brown2);font-style:italic}
-#gate .small{font-size:.72rem;font-style:normal;margin-top:14px}
+.x{background:none;border:0;color:var(--bad);cursor:pointer;font-size:.85rem;padding:0;text-decoration:underline}
+.stats{display:flex;flex-wrap:wrap;gap:16px;font-size:.95rem;margin-bottom:8px;font-style:italic}
+.att{padding:6px 0;border-top:1px dotted var(--brown2);cursor:pointer}.att:first-of-type{border-top:0}
+.empty{text-align:center;color:var(--brown2);font-style:italic;padding:26px 10px}
+footer{max-width:920px;margin:0 auto;padding:10px 16px 30px;font-size:.82rem;color:var(--brown2);text-align:center;font-style:italic}
+dialog{border:3px double var(--brown);border-radius:2px;background:var(--paper);color:var(--ink);max-width:500px;width:calc(100% - 24px);padding:18px;max-height:92vh}
+dialog::backdrop{background:rgba(35,25,15,.65)}
+.chk{display:inline-flex;align-items:center;gap:4px;margin:0 10px 6px 0;font-size:.95rem}.chk input{width:auto}
+#gate{position:fixed;inset:0;z-index:9;background:var(--green) radial-gradient(ellipse at center,#3d4c2c,#222c18);display:flex;align-items:center;justify-content:center;padding:20px}
+#gate .box{background:var(--paper);border:4px double var(--brown);padding:28px 22px;max-width:370px;width:100%;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+#gate h1{color:var(--brown);font-size:2rem;line-height:1.1}
+#gate p{font-size:.9rem;color:var(--brown2);font-style:italic}
+#gate .small{font-size:.78rem;margin-top:14px}
 .shake{animation:sh .3s}@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 </style>
 </head>
@@ -91,19 +93,27 @@ Unofficial private record for Bridge House. Not affiliated with Riverside Manage
 <script>
 const PW_STORE='bh-ok';
 const OPT_PRI=['Low','Medium','High'];
+const NEXT=['next','Next check / service due','date'];
 const SEC={
- electrical:{t:'Electrical',ic:'⚡',items:true,types:['Outside light','Solar panel','Fence/gate light','Other'],tags:['Mains supply','Light switch','Requires attention','Motion sensor','Broken'],warn:['Requires attention','Broken'],
-  f:[['power','Power source','sel',['Mains','Solar','Battery','Other']],['model','Make / model'],['installed','Installed','date'],['checked','Last checked','date'],['contractor','Contractor / supplier'],['priority','Priority','sel',OPT_PRI]]},
- water:{t:'Water',ic:'💧',items:true,types:['Outside tap','Water collector','Other'],tags:['Requires attention','Leaking','Frost protected','Isolation valve'],warn:['Requires attention','Leaking'],
-  f:[['supply','Supply','sel',['Mains','Rainwater','Other']],['model','Make / model'],['installed','Installed','date'],['checked','Last checked','date'],['contractor','Contractor / supplier'],['priority','Priority','sel',OPT_PRI]]},
- gas:{t:'Gas',ic:'🔥',empty:true},
- gardening:{t:'Gardening',ic:'🌿',par:1},
- fences:{t:'Fences & Gates',ic:'🚪',par:1},
- meters:{t:'Meter Cupboards',ic:'📦',par:1}
+ electrical:{t:'Electrical',items:true,types:['Outside light','Solar panel','Fence/gate light','Other'],tags:['Mains supply','Light switch','Requires attention','Motion sensor','Broken'],warn:['Requires attention','Broken'],
+  f:[['power','Power source','sel',['Mains','Solar','Battery','Other']],['circuit','Circuit / fuse reference'],['rating','Rating / wattage'],['model','Make / model'],['installed','Installed','date'],['checked','Last checked','date'],NEXT,['warranty','Warranty until','date'],['contractor','Contractor / supplier'],['priority','Priority','sel',OPT_PRI]]},
+ water:{t:'Water',items:true,types:['Outside tap','Water collector','Other'],tags:['Requires attention','Leaking','Frost protected','Isolation valve'],warn:['Requires attention','Leaking'],
+  f:[['supply','Supply','sel',['Mains','Rainwater','Other']],['pipe','Pipe / fitting'],['model','Make / model'],['installed','Installed','date'],['checked','Last checked','date'],NEXT,['warranty','Warranty until','date'],['contractor','Contractor / supplier'],['priority','Priority','sel',OPT_PRI]]},
+ gas:{t:'Gas',items:true,types:['Gas meter','Boiler','Isolation valve','Pipework','Appliance','Other'],tags:['Requires attention','Gas Safe checked','Leak suspected','Capped off'],warn:['Requires attention','Leak suspected'],
+  f:[['supply','Supply','sel',['Mains','LPG','Other']],['model','Make / model'],['installed','Installed','date'],['checked','Last serviced','date'],NEXT,['contractor','Gas Safe engineer'],['priority','Priority','sel',OPT_PRI]]},
+ certs:{t:'Certificates & Inspections',items:true,plain:true,lbl:'certificate',types:['EICR (electrical)','Gas safety','Building insurance','Listed building consent','Survey','Other'],tags:[],warn:[],
+  f:[['ref','Reference no.'],['issued','Issued','date'],['expires','Expires','date'],['by','Issued by'],['cost','Cost (£)']]},
+ contacts:{t:'Contacts',items:true,plain:true,lbl:'contact',types:['Contractor','Management company','Utility','Emergency','Other'],tags:[],warn:[],
+  f:[['company','Company'],['trade','Trade / role'],['phone','Telephone'],['email','Email'],['address','Address']]},
+ listed:{t:'Listed Building'},
+ gardening:{t:'Gardening',par:1},fences:{t:'Fences & Gates',par:1},meters:{t:'Meter Cupboards',par:1},
+ drainage:{t:'Drainage & Guttering',par:1},paths:{t:'Paths & Driveway',par:1},outbuildings:{t:'Outbuildings',par:1}
 };
-const MAINT=['gardening','fences','meters'];
+const PINS=['electrical','water','gas'];
+const MAINT=['gardening','fences','meters','drainage','paths','outbuildings'];
+const daysTo=d=>Math.ceil((new Date(d)-new Date(today()))/864e5);
 const STAT=[['done','Done'],['prog','In progress'],['todo','To do']];
-let S={master:null},PW=sessionStorage.getItem(PW_STORE)||'',placing=null,filt='all',layers={electrical:true,water:true};
+let S={master:null},PW=sessionStorage.getItem(PW_STORE)||'',placing=null,filt='all',layers={electrical:true,water:true,gas:true};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
@@ -127,7 +137,8 @@ const route=()=>location.hash.slice(1)||'home';
 addEventListener('hashchange',()=>{placing=null;render();scrollTo(0,0)});
 $('#back').onclick=()=>{const s=SEC[route()];location.hash=s&&s.par?'maintenance':'home'};
 
-function tile(k,ic,t,sub){return `<button class="tile" data-go="${k}"><span class="ic">${ic}</span><h3>${t}</h3><small>${sub}</small></button>`}
+const ICON={electrical:'I',water:'II',gas:'III',maintenance:'IV',certs:'V',contacts:'VI',listed:'VII',plan:'VIII',gardening:'i',fences:'ii',meters:'iii',drainage:'iv',paths:'v',outbuildings:'vi'};
+function tile(k,ic,t,sub){return `<button class="tile" data-go="${k}"><span class="ic">${ICON[k]}</span><h3>${t}</h3><small>${sub}</small></button>`}
 const badN=k=>D(k).items.filter(i=>i.status==='bad').length;
 const itemSub=k=>{const n=D(k).items.length,b=badN(k);return `${n} item${n===1?'':'s'}${b?` · <b>${b} not working</b>`:''}`};
 const logN=k=>{const n=D(k).log.length;return `${n} entr${n===1?'y':'ies'}`};
@@ -137,26 +148,50 @@ function render(){
  $('#back').hidden=v==='home';
  if(v==='home'){
   h=`<p class="crumb">What are you accessing?</p><div class="tiles">
-  ${tile('electrical','⚡','Electrical',itemSub('electrical'))}${tile('water','💧','Water',itemSub('water'))}
-  ${tile('gas','🔥','Gas','Coming soon')}${tile('maintenance','🛠️','Maintenance','Gardening, fences, meters')}
-  ${tile('plan','🗺️','Master Plan',S.master?'Site plan uploaded':'Upload your site plan')}</div>`;
+  ${PINS.map(k=>tile(k,'',SEC[k].t,itemSub(k))).join('')}
+  ${tile('maintenance','','Maintenance','Gardening, fences, meters and more')}
+  ${tile('certs','','Certificates',expN())}${tile('contacts','','Contacts',D('contacts').items.length+' recorded')}
+  ${tile('listed','','Listed Building',logN('listed'))}${tile('plan','','Master Plan',S.master?'Site plan uploaded':'Upload your site plan')}</div>`+attention();
  }else if(v==='maintenance'){
-  h=`<p class="crumb">Maintenance</p><div class="tiles">${MAINT.map(k=>tile(k,SEC[k].ic,SEC[k].t,logN(k))).join('')}</div>`;
+  h=`<p class="crumb">Maintenance</p><div class="tiles">${MAINT.map(k=>tile(k,'',SEC[k].t,logN(k))).join('')}</div>`;
  }else if(v==='plan'){
   h=`<p class="crumb">Master Plan</p><div class="card"><div class="row">
   <label class="b alt">${S.master?'Replace plan':'Upload plan'}<input type="file" id="planf" accept="image/*" hidden></label>
   ${S.master?'<button class="b ghost" id="rmplan">Remove plan</button>':''}</div>
   <p class="meta">One plan is shared by every section. To add a pin, open Electrical or Water and tap “Place on plan” on an item.</p>
-  <div class="row">${['electrical','water'].map(k=>`<label class="chk"><input type="checkbox" data-layer="${k}" ${layers[k]?'checked':''}>${SEC[k].ic} ${SEC[k].t}</label>`).join('')}</div>
-  ${planHTML(['electrical','water'].filter(k=>layers[k]))}
-  <div class="legend">Circle = electrical · Square = water · Green = working · Red = not working</div></div>`;
+  <div class="row">${PINS.map(k=>`<label class="chk"><input type="checkbox" data-layer="${k}" ${layers[k]?'checked':''}>${SEC[k].t}</label>`).join('')}</div>
+  ${planHTML(PINS.filter(k=>layers[k]))}
+  <div class="legend">Circle = electrical · Square = water · Shield = gas · Green = working · Red = not working</div></div>`;
  }else if(s&&s.empty){
   h=`<p class="crumb">${s.t}</p><div class="card"><div class="empty">Nothing here yet. This section is saved for later.</div></div>`;
  }else if(s){
-  h=`<p class="crumb">${s.par?'Maintenance: ':''}${s.t}</p>`+(s.items?itemsCard(v):'')+logCard(v);
+  h=`<p class="crumb">${s.par?'Maintenance: ':''}${s.t}</p>`+(s.items?itemsCard(v):'')+(s.plain?'':logCard(v));
  }
  $('#main').innerHTML=h;
 }
+
+
+const expN=()=>{const it=D('certs').items,n=it.filter(i=>i.d&&i.d.expires&&daysTo(i.d.expires)<=60).length;return `${it.length} on file`+(n?` · <b>${n} due</b>`:'')};
+function attention(){
+ const rows=[];
+ PINS.forEach(k=>D(k).items.forEach(i=>{
+  if(i.status==='bad')rows.push([k,`${esc(i.name)} is not working`]);
+  else if((i.tags||[]).some(t=>SEC[k].warn.includes(t)))rows.push([k,`${esc(i.name)} requires attention`]);
+  if(i.d&&i.d.next&&daysTo(i.d.next)<=30)rows.push([k,`${esc(i.name)}: check due ${fmt(i.d.next)}`])}));
+ D('certs').items.forEach(i=>{const e=i.d&&i.d.expires;if(e&&daysTo(e)<=60)rows.push(['certs',`${esc(i.name)} ${daysTo(e)<0?'expired':'expires'} ${fmt(e)}`])});
+ Object.keys(SEC).forEach(k=>D(k).log.forEach(l=>{const x=l.d||{};
+  if(x.status==='todo'||x.status==='prog')rows.push([k,`${esc(x.title||'Entry')} (${x.status==='todo'?'to do':'in progress'})`]);
+  else if(x.next&&daysTo(x.next)<=30)rows.push([k,`${esc(x.title||'Entry')} due ${fmt(x.next)}`])}));
+ return `<div class="card"><h2>Needs attention</h2>${rows.length?rows.map(r=>`<div class="att" data-go="${r[0]}"><b>${SEC[r[0]].t}</b>: ${r[1]}</div>`).join(''):'<div class="empty">Nothing outstanding.</div>'}</div>`}
+function plainCard(v){const s=SEC[v],d=D(v);
+ const list=[...d.items].sort((a,b)=>((a.d||{}).expires||'9').localeCompare((b.d||{}).expires||'9')||a.name.localeCompare(b.name));
+ return `<div class="card"><h2>${s.t}</h2><div class="row" style="margin-bottom:6px"><button class="b" data-add="${v}">Add ${s.lbl}</button></div>
+ ${list.length?list.map(i=>{const x=i.d||{},n=x.expires?daysTo(x.expires):null;
+  const flag=n==null?'':n<0?'<span class="tag warn">Expired</span>':n<=60?`<span class="tag warn">Due in ${n} days</span>`:'';
+  return `<div class="item"><div class="grow"><strong>${esc(i.name)}</strong> <small>· ${esc(i.type)}</small> ${flag}
+  <div class="meta">${s.f.filter(f=>x[f[0]]).map(f=>`${f[1]}: ${f[2]==='date'?fmt(x[f[0]]):f[0]==='cost'?'£'+esc(x[f[0]]):esc(x[f[0]])}`).join(' · ')}</div>
+  ${i.notes?`<div style="font-size:.95rem;margin-top:3px">${esc(i.notes)}</div>`:''}
+  <div class="row" style="margin-top:6px"><button class="b ghost" data-edit="${i.id}" data-sec="${v}">Edit</button></div></div></div>`}).join(''):'<div class="empty">Nothing recorded yet.</div>'}</div>`}
 
 function planHTML(secs){
  if(!S.master)return `<div class="plan"><div class="hint">No master plan yet. <a href="#plan">Upload one</a></div></div>`;
@@ -165,17 +200,18 @@ function planHTML(secs){
 }
 
 function itemsCard(v){
+ if(SEC[v].plain)return plainCard(v);
  const s=SEC[v],d=D(v),bad=badN(v),att=d.items.filter(i=>(i.tags||[]).some(t=>s.warn.includes(t))).length;
  const list=d.items.map((i,n)=>[i,n]).filter(([i])=>filt==='all'||(filt==='bad'&&i.status==='bad')||(filt==='att'&&(i.tags||[]).some(t=>s.warn.includes(t))));
  return `<div class="card"><h2>Location on plan</h2>${planHTML([v])}
  <div class="row"><a href="#plan">Manage master plan</a></div></div>
  <div class="card"><h2>${s.t} items</h2>
- <div class="stats"><span>🟢 ${d.items.length-bad} working</span><span>🔴 ${bad} not working</span><span>⚠️ ${att} need attention</span></div>
+ <div class="stats"><span>${d.items.length-bad} working</span><span>${bad} not working</span><span>${att} need attention</span></div>
  <div class="row" style="margin-bottom:6px"><button class="b" data-add="${v}">+ Add item</button>
  <select id="filt" style="width:auto"><option value="all">All items</option><option value="bad" ${filt==='bad'?'selected':''}>Not working</option><option value="att" ${filt==='att'?'selected':''}>Needs attention</option></select></div>
  ${list.length?list.map(([i,n])=>{const dd=i.d||{};
   const det=s.f.filter(f=>dd[f[0]]).map(f=>`${f[1]}: ${f[2]==='date'?fmt(dd[f[0]]):esc(dd[f[0]])}`).join(' · ');
-  return `<div class="item"><div class="num ${v==='water'?'water':''} ${i.status==='bad'?'bad':'ok'}">${n+1}</div><div class="grow">
+  return `<div class="item"><div class="num ${v} ${i.status==='bad'?'bad':'ok'}">${n+1}</div><div class="grow">
   <strong>${esc(i.name)}</strong> <small>· ${esc(i.type)}${i.loc?' · '+esc(i.loc):''}</small><br>
   <small>${i.status==='bad'?'Not working':'Working'}${i.x==null?' · not on plan':''}</small>
   <div>${(i.tags||[]).map(t=>`<span class="tag ${s.warn.includes(t)?'warn':''}">${esc(t)}</span>`).join('')}</div>
@@ -191,19 +227,20 @@ function logCard(v){
  <div class="f"><span>Title</span><input id="lti" required placeholder="${s.items?'e.g. Replaced porch bulb':'e.g. Cut back hedge'}"></div>
  ${s.items&&d.items.length?`<div class="f"><span>Item (optional)</span><select id="li"><option value="">General</option>${d.items.map((i,n)=>`<option value="${i.id}">${n+1}. ${esc(i.name)}</option>`).join('')}</select></div>`:''}
  <div class="row"><div class="f g"><span>Done by</span><input id="lb" placeholder="Name or company"></div><div class="f g"><span>Cost (£)</span><input id="lc" type="number" step="0.01" min="0"></div></div>
+ <div class="f"><span>Next due (optional)</span><input type="date" id="ln"></div>
  <div class="f"><span>Details</span><textarea id="lt" placeholder="What was done, what’s next…"></textarea></div>
  <button class="b">Add to log</button></form>
  ${d.log.length?[...d.log].sort((a,b)=>b.date.localeCompare(a.date)).map(l=>{const x=l.d||{},it=d.items.find(i=>i.id===l.item),st=STAT.find(y=>y[0]===x.status);
   return `<div class="log"><time>${fmt(l.date)}${it?' · '+esc(it.name):''}</time>
   <div><strong>${esc(x.title||'Entry')}</strong> ${st?`<span class="st ${st[0]}">${st[1]}</span>`:''}</div>
   ${x.by||x.cost?`<div class="meta">${x.by?'By '+esc(x.by):''}${x.by&&x.cost?' · ':''}${x.cost?'£'+Number(x.cost).toFixed(2):''}</div>`:''}
-  ${l.text?`<p>${esc(l.text)}</p>`:''}<button class="x" data-dl="${l.id}" data-sec="${v}">Delete</button></div>`}).join(''):'<div class="empty">No entries yet.</div>'}</div>`;
+  ${x.next?`<div class="meta">Next due: ${fmt(x.next)}</div>`:''}${l.text?`<p>${esc(l.text)}</p>`:''}<button class="x" data-dl="${l.id}" data-sec="${v}">Delete</button></div>`}).join(''):'<div class="empty">No entries yet.</div>'}</div>`;
 }
 
 /* events */
 $('#main').addEventListener('click',e=>{
  const t=e.target,ds=t.dataset;
- if(ds.go)return location.hash=ds.go;
+ const g=t.closest('[data-go]');if(g)return location.hash=g.dataset.go;
  if(ds.add)return openItem(ds.add);
  if(ds.edit)return openItem(ds.sec,ds.edit);
  if(ds.place){
@@ -220,7 +257,7 @@ $('#main').addEventListener('click',e=>{
 $('#main').addEventListener('submit',e=>{
  if(e.target.id!=='lf')return;e.preventDefault();const v=e.target.dataset.sec;
  const en={id:uid(),date:$('#ld').value,item:$('#li')?.value||'',text:$('#lt').value.trim(),
-  d:{title:$('#lti').value.trim(),status:$('#ls').value,by:$('#lb').value.trim(),cost:$('#lc').value}};
+  d:{title:$('#lti').value.trim(),status:$('#ls').value,by:$('#lb').value.trim(),cost:$('#lc').value,next:$('#ln').value}};
  D(v).log.push(en);sync('addLog',{section:v,entry:en});render();
 });
 $('#main').addEventListener('change',e=>{
@@ -240,7 +277,7 @@ function fld([k,l,t,o],val){const v=esc(val||'');
  return `<div class="f g"><span>${l}</span>${t==='sel'?`<select data-d="${k}"><option value="">–</option>${o.map(x=>`<option ${x===val?'selected':''}>${x}</option>`).join('')}</select>`:`<input data-d="${k}" type="${t==='date'?'date':'text'}" value="${v}">`}</div>`}
 function openItem(sec,id){
  const s=SEC[sec],d=D(sec),i=d.items.find(x=>x.id===id)||{name:'',type:s.types[0],loc:'',status:'ok',tags:[],notes:'',d:{}},dd=i.d||{},dl=$('#dlg');
- dl.innerHTML=`<form id="if"><h2 style="color:var(--brown)">${id?'Edit':'Add'} ${s.t.toLowerCase()} item</h2>
+ dl.innerHTML=`<form id="if"><h2 style="color:var(--brown)">${id?'Edit':'Add'} ${s.lbl||s.t.toLowerCase()+' item'}</h2>
  <div class="f"><span>Name</span><input id="in" required value="${esc(i.name)}" placeholder="e.g. Front porch light"></div>
  <div class="row"><div class="f g"><span>Type</span><select id="it">${s.types.map(t=>`<option ${t===i.type?'selected':''}>${esc(t)}</option>`).join('')}</select></div>
  <div class="f g"><span>Status</span><select id="is"><option value="ok" ${i.status!=='bad'?'selected':''}>Working</option><option value="bad" ${i.status==='bad'?'selected':''}>Not working</option></select></div></div>
@@ -250,6 +287,7 @@ function openItem(sec,id){
  <div class="f"><span>Notes</span><textarea id="inn">${esc(i.notes)}</textarea></div>
  <div class="row"><button class="b">Save</button><button type="button" class="b ghost" id="cx">Cancel</button>${id?'<button type="button" class="b alt" id="del" style="margin-left:auto">Delete</button>':''}</div></form>`;
  dl.showModal();
+ if(s.plain){['#is','#il'].forEach(q=>$(q).closest('.f').style.display='none');[...dl.querySelectorAll('.f>span')].find(x=>x.textContent==='Tags').parentNode.style.display='none'}
  $('#cx').onclick=()=>dl.close();
  if(id)$('#del').onclick=()=>{if(confirm('Delete this item?')){d.items=d.items.filter(x=>x.id!==id);sync('deleteItem',{id});dl.close();render()}};
  $('#if').onsubmit=e=>{e.preventDefault();
