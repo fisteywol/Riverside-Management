@@ -3,8 +3,8 @@
 
 const URL_ = process.env.SUPABASE_URL;
 const KEY = process.env.SUPABASE_SERVICE_KEY;
-const SECTIONS = ['electrical', 'water', 'gas', 'gardening', 'fences', 'meters'];
-const PIN_SECTIONS = ['electrical', 'water'];
+const SECTIONS = ['electrical', 'water', 'gas', 'certs', 'contacts', 'listed', 'gardening', 'fences', 'meters', 'drainage', 'paths', 'outbuildings'];
+const PIN_SECTIONS = ['electrical', 'water', 'gas', 'certs', 'contacts'];
 const dd = o => { const x = o && typeof o === 'object' ? o : {}; if (JSON.stringify(x).length > 5000) throw new Error('too big'); return x; };
 
 async function sb(path, method = 'GET', body, prefer) {
